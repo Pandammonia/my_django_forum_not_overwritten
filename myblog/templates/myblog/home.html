@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forum</title>
+</head>
+{% extends "myblog/multi.html" %}
+<body>
+{% block content %}
+<h1>Luke's forum</h1>
+<p>A forum for all sorts</p>
+<p>Video games</p>
+
+<a href="{% url 'myblog:ffbe' %}">FFBE</a>
+<p>Technology</p>
+<a href="{% url 'myblog:python' %}">Python</a>
+{% endblock content %}
+</body>
+</html>

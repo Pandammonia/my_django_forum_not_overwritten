@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Python</h1>
+<p>Threads;</p>
+<li>
+	{% for thread in threads %}
+	<p>{{ thread }}</p>
+	{% empty %}
+	<p>No threads have been created yet</p>
+	{% endfor %}
+
+
+</body>
+</html>

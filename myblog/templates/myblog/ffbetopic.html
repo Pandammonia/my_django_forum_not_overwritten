@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>FFBE - {{ thread }}</h1>
+{% block content %}
+<p>{% for post in posts %}</p>
+<p>{{ post.post_body}} </p>
+{% endfor %}
+{% endblock content %}
+</body>
+</html>

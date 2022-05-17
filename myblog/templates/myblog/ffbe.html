@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>FFBE</h1>
+<p>Threads;</p>
+	{% for thread in threads %}
+	<a href="{% url 'myblog:ffbetopic' thread.id %}">{{ thread }}</a>
+	<li>{{ thread.thread_body }}</li>
+	<br>
+	{% empty %}
+	<p>No threads have been added yet</p>
+	{% endfor %}
+
+<p> <a href="{% url 'myblog:ffbenew' %}">Post new thread</a>
+
+</body>
+</html>
