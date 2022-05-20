@@ -4,5 +4,8 @@ from .models import Thread
 class ThreadForm(forms.ModelForm):
 	class Meta:
 		model = Thread
-		fields = ['thread_title', 'thread_body']
-		labels = {'thread_title': '','thread_body': ''}
+		fields = ['thread_title', 'thread_body', 'board']
+		labels = {'thread_title': '','thread_body': '', 'board':'Post to which board?'}
+
+
+

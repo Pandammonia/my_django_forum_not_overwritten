@@ -2,7 +2,7 @@
 
 {% block content %}
 <p>Add a new thread</p>
-<form action="{% url 'myblog:ffbenew' %}" method='post'>
+<form action="{% url 'myblog:new' %}" method='post'>
 	{% csrf_token %}
 	{{ form.as_p }}
 	<button name="submit">Add thread</button>

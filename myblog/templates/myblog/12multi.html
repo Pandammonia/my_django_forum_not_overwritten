@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+	<a href="{% url 'myblog:home' %}">Home</a><br>
+	Forums:
+	Video games:
+    <a href="{% url 'myblog:ffbe' %}">FFBE</a> &nbsp;&nbsp;&nbsp;
+    Technology:
+    <a href="{% url 'myblog:python' %}">Python</a> &nbsp;&nbsp;&nbsp;
+    High Strangeness:
+    <a href="{% url 'myblog:highstrangeness' %}">High Strangeness</a> &nbsp;&nbsp;&nbsp;<br>
+    Post new thread:
+    <a href="{% url 'myblog:new' %}">Post new thread</a>
+
+{% block content %} {% endblock content %}

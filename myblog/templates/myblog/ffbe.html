@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-
+c{% extends "myblog/multi.html" %}
+{% block content %}
 <h1>FFBE</h1>
 <p>Threads;</p>
 	{% for thread in threads %}
 	<a href="{% url 'myblog:ffbetopic' thread.id %}">{{ thread }}</a>
-	<li>{{ thread.thread_body }}</li>
+	{{thread.}}
 	<br>
 	{% empty %}
 	<p>No threads have been added yet</p>
 	{% endfor %}
 
-<p> <a href="{% url 'myblog:ffbenew' %}">Post new thread</a>
-
+<p> <a href="{% url 'myblog:new' %}">Post new thread</a>
+{% endblock content %} 
 </body>
 </html>

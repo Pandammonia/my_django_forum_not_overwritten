@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Forum</title>
-</head>
 {% extends "myblog/multi.html" %}
 <body>
 {% block content %}
 <h1>Luke's forum</h1>
 <p>A forum for all sorts</p>
-<p>Video games</p>
 
+<p>Video games
 <a href="{% url 'myblog:ffbe' %}">FFBE</a>
-<p>Technology</p>
+</p>
+
+<p>Technology
 <a href="{% url 'myblog:python' %}">Python</a>
+</p>
+
+<p>Weird stuff
+<a href="{% url 'myblog:highstrangeness' %}">High strangeness</a></p><br>
+
+<p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
 {% endblock content %}
 </body>
 </html>

@@ -23,11 +23,5 @@
     <a href="{% url 'myblog:highstrangeness' %}">High Strangeness</a> &nbsp;&nbsp;&nbsp;<br>
     Post new thread:
     <a href="{% url 'myblog:new' %}">Post new thread</a>
-    {% if user.is_authenticated %}
-    User: {{ user.get_username }} 
-    <a href="{% url 'users:logout'%}?next={{request.path}}">Logout</a>
-    {% else %} 
-    <a href="{% url 'users:login' %}">Login</a>
-    {% endif %}
 
 {% block content %} {% endblock content %}

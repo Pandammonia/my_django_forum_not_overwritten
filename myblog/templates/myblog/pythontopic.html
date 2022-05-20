@@ -4,9 +4,9 @@
 
 <h1>{{ thread }}</h1>
 {{ thread.thread_body }} <br> <br>
-Time posted: {{ thread.thread_date }}
+Time posted: {{ thread.thread_date }} <br> <br>
 
-
+Replies:
 <p>{% for post in posts %}</p>
 <p>{{ post.post_body}} </p>
 

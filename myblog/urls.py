@@ -8,6 +8,9 @@ urlpatterns = [
     path('ffbe/', views.ffbe, name='ffbe'),
     path('ffbe/<int:topicid>/', views.ffbetopic, name='ffbetopic'),
     #FFBE new thread
-    path('ffbe/new_topic/', views.ffbenew, name='ffbenew'),
+    path('new_topic/', views.ffbenew, name='new'),
+    path('python/<int:topicid>/', views.pythontopic, name='pythontopic'),
     path('python/', views.python, name='python'),
+    #High Strangeness links
+    path('highstrangeness/', views.highstrangeness, name='highstrangeness'),
 ]

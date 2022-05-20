@@ -1,9 +1,9 @@
 {% extends "myblog/multi.html" %}
 {% block content %}
-<h1>Python</h1>
+<h1>High Strangeness</h1>
 <p>Threads;</p>
 	{% for thread in threads %}
-	<a href="{% url 'myblog:pythontopic' thread.id %}">{{ thread }}</a> <br>
+	{{ thread }}
 	{% empty %}
 	<p>No threads have been created yet</p>
 	{% endfor %}
