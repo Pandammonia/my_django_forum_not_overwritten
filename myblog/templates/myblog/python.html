@@ -3,7 +3,7 @@
 <h1>Python</h1>
 <p>Threads;</p>
 	{% for thread in threads %}
-	<a href="{% url 'myblog:pythontopic' thread.id %}">{{ thread }}</a> <br>
+	<a href="{% url 'myblog:pythontopic' thread.id %}">{{ thread }}</a> Posted by: {{thread.owner} <br>
 	{% empty %}
 	<p>No threads have been created yet</p>
 	{% endfor %}

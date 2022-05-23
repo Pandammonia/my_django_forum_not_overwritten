@@ -28,14 +28,16 @@ def ffbetopic(request, topicid):
 	context = {'thread': thread, 'posts': posts}
 	return render(request, 'myblog/ffbetopic.html', context)
 
-def ffbenew(request):
+def new(request):
 	if request.method != 'POST':
 		form = ThreadForm()
 	else:
 		form = ThreadForm(data=request.POST)
 		if form.is_valid():
-			form.save()
-			return redirect('myblog:ffbe')
+			new_topic = form.save(commit=False)
+			new_topic.owner = request.user
+			new_topic.save()
+			return redirect('myblog:home')
 
 	context = {'form': form}
 	return render(request, 'myblog/ffbenew.html', context)

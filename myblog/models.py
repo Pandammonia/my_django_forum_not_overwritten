@@ -14,6 +14,7 @@ class Thread(models.Model):
 	thread_date = models.DateTimeField(auto_now_add=True)
 	likes = models.IntegerField(blank=True, null=True)
 	board = models.CharField(max_length=24, choices=board_choice, default='python')
+	owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
 	def __str__ (self):
 		return self.thread_title

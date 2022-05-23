@@ -3,8 +3,7 @@ c{% extends "myblog/multi.html" %}
 <h1>FFBE</h1>
 <p>Threads;</p>
 	{% for thread in threads %}
-	<a href="{% url 'myblog:ffbetopic' thread.id %}">{{ thread }}</a>
-	{{thread.}}
+	<a href="{% url 'myblog:ffbetopic' thread.id %}">{{ thread }}</a> Posted by: {{thread.owner}}
 	<br>
 	{% empty %}
 	<p>No threads have been added yet</p>
