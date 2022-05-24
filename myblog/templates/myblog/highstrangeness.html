@@ -3,7 +3,7 @@
 <h1>High Strangeness</h1>
 <p>Threads;</p>
 	{% for thread in threads %}
-	{{ thread }}
+	<a href="{% url 'myblog:highstrangetopic' thread.id %}">{{ thread }}</a> Posted by: {{thread.owner}} <br>
 	{% empty %}
 	<p>No threads have been created yet</p>
 	{% endfor %}

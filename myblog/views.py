@@ -43,6 +43,7 @@ def new(request):
 	return render(request, 'myblog/ffbenew.html', context)
 
 #PYTHON BOARD VIEWS
+@login_required
 def python(request):
 	threads = Thread.objects.filter(board='python').order_by('thread_date')
 	context = {'threads': threads}
@@ -55,7 +56,14 @@ def pythontopic(request, topicid):
 	return render(request, 'myblog/pythontopic.html', context)
 
 # High strangeness
+@login_required
 def highstrangeness(request):
 	threads = Thread.objects.filter(board='high strangeness').order_by('thread_date')
 	context = {'threads': threads}
 	return render(request, 'myblog/highstrangeness.html', context)
+
+def highstrangetopic(request, topicid):
+	thread = Thread.objects.get(id=topicid)
+	posts = thread.post_set.order_by('post_time')
+	context = {'thread': thread, 'posts': posts}
+	return render(request, 'myblog/highstrangetopic.thtml', context)

@@ -13,4 +13,5 @@ urlpatterns = [
     path('python/', views.python, name='python'),
     #High Strangeness links
     path('highstrangeness/', views.highstrangeness, name='highstrangeness'),
+    path('highstrangeness/<int:topicid>/', views.highstrangetopic, name='highstrangetopic'),
 ]
