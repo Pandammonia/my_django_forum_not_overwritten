@@ -66,4 +66,4 @@ def highstrangetopic(request, topicid):
 	thread = Thread.objects.get(id=topicid)
 	posts = thread.post_set.order_by('post_time')
 	context = {'thread': thread, 'posts': posts}
-	return render(request, 'myblog/highstrangetopic.thtml', context)
+	return render(request, 'myblog/highstrangetopic.html', context)
