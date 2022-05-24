@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Thread, Post
-from .forms import ThreadForm
+from .forms import ThreadForm, PostForm
 from django.contrib.auth.decorators import login_required
 
 def is_valid(self, form):
@@ -27,6 +27,21 @@ def ffbetopic(request, topicid):
 	posts = thread.post_set.order_by('post_time')
 	context = {'thread': thread, 'posts': posts}
 	return render(request, 'myblog/ffbetopic.html', context)
+
+def new_entry(request, topicid):
+	"""Add new reply to thread"""
+	thread = Thread.objects.get(id=topicid)
+	if request.method != 'POST':
+		form = PostForm()
+	else:
+		form = PostForm(data=request.POST)
+		if form.is_valid():
+			new_entry = form.save(commit=False)
+			new_entry.posts_thread = thread
+			new_entry.save()
+			return redirect('myblog:home')
+	context = {'thread': thread, 'form':form}
+	return render(request, 'myblog/new_entry.html', context)
 
 def new(request):
 	if request.method != 'POST':

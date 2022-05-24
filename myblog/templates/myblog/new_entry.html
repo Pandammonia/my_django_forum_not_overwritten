@@ -1,0 +1,12 @@
+{% extends "myblog/multi.html" %}
+{% block content  %}
+
+<p>Add new reply: </p>
+
+<form action = "{% url 'myblog:new_entry' thread.id %}" method='post'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button name='submit'>Add entry</button>
+</form>
+
+{% endblock content %}

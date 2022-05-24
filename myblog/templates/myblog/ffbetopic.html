@@ -9,6 +9,10 @@ Time posted: {{ thread.thread_date }}
 
 <p>{% for post in posts %}</p>
 <p>{{ post.post_body}} </p>
+<p>{{ post.owner }} </p>
 
 {% endfor %}
+
+
+<a href="{% url 'myblog:new_entry' thread.id %}">Add new entry</a>
 {% endblock content %}

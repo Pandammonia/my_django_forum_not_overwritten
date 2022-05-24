@@ -11,4 +11,7 @@ Replies:
 <p>{{ post.post_body}} </p>
 
 {% endfor %}
+
+<a href="{% url 'myblog:new_entry' thread.id %}">Add new entry</a>
+
 {% endblock content %}
